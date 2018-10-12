@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: example-pod
+spec:
+  containers:
+    - name: example-pod
+      image: cron-image:latest
+      imagePullPolicy: Never
+      command: [ "/bin/bash", "-c", "--" ]
+      args: [ "while true; do sleep 30; done;" ]

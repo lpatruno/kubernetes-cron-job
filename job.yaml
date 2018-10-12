@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+  labels:
+    app: job
+spec:
+  template:
+    spec:
+      containers:
+      - name: job
+        image: cron-image:latest
+        imagePullPolicy: Never
+        args:
+            - python
+            - run_job.py
+      restartPolicy: Never
+  backoffLimit: 1

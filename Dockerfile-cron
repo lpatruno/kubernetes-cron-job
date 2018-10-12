@@ -1,0 +1,8 @@
+FROM python:3.6
+
+ADD ./requirements.txt requirements.txt
+ADD ./create_job.py create_job.py
+ADD ./run_job.py run_job.py
+ADD ./job.yaml job.yaml
+
+RUN pip install -r requirements.txt
